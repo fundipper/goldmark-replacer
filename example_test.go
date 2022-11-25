@@ -1,10 +1,13 @@
-# goldmark-replacer
+package replacer_test
 
-[Goldmark](https://github.com/yuin/goldmark) text replacer extension.
+import (
+	"log"
+	"os"
 
-## code
+	replacer "github.com/fundipper/goldmark-replacer"
+	"github.com/yuin/goldmark"
+)
 
-```go
 func Example() {
 	md := goldmark.New(
 		goldmark.WithExtensions(
@@ -25,17 +28,5 @@ func Example() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	// output: <p>©Dmitry Sedykh</p>
 }
-```
-
-## view
-
-```html
-<p>©Dmitry Sedykh</p>
-```
-
-## thanks
-
-[Goldmark](https://github.com/yuin/goldmark)
-
-[goldmark-text-replacer](https://github.com/mdigger/goldmark-text-replacer)
